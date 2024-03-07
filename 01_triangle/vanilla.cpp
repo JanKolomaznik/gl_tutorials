@@ -17,7 +17,10 @@ int main() {
 		return -1;
 	}
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create a windowed mode window and its OpenGL context
@@ -38,14 +41,14 @@ int main() {
 
 	// Shader sources
 	std::string vertexShaderSource = R"glsl(
-		#version 440 core
+		#version 410 core
 		layout (location = 0) in vec3 aPos;
 		void main() {
 		    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
 		}
 		)glsl";
 	std::string fragmentShaderSource = R"glsl(
-		#version 440 core
+		#version 410 core
 		out vec4 FragColor;
 		void main() {
 		    FragColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);

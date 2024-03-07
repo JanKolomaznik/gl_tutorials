@@ -4,7 +4,7 @@
 
 // Shader sources
 inline std::string vertexShaderSource = R"glsl(
-	#version 440 core
+	#version 410 core
 
 	layout (location = 0) in vec3 aPos;
 	layout (location = 1) in vec3 aColor;
@@ -18,7 +18,7 @@ inline std::string vertexShaderSource = R"glsl(
 )glsl";
 
 inline std::string fragmentShaderSource = R"glsl(
-	#version 440 core
+	#version 410 core
 
 	in vec3 vertexColor; // Color from the vertex shader
 

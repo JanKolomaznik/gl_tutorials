@@ -5,7 +5,7 @@
 
 // Shader sources
 inline std::string vertexShaderSource = R"glsl(
-	#version 440 core
+	#version 410 core
 	layout (location = 0) in vec2 aPos;
 
 	out vec2 texCoord;
@@ -17,7 +17,7 @@ inline std::string vertexShaderSource = R"glsl(
 )glsl";
 
 inline std::string fragmentShaderSource = R"glsl(
-	#version 440 core
+	#version 410 core
 
 	vec4 randomColor(int seed) {
 		float r = ((seed * 315 + 714) % 255) / 255.0;
