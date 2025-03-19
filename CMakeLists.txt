@@ -73,6 +73,19 @@ else()
 	add_compile_definitions(GLM_FORCE_SWIZZLE GLM_ENABLE_EXPERIMENTAL)
 endif()
 
+
+add_library(utils
+	utils/ogl_material_factory.cpp
+	utils/ogl_geometry_factory.cpp
+	utils/ogl_geometry_construction.cpp
+	utils/obj_file_loading.cpp
+	)
+target_link_libraries(utils glm::glm glfw OpenGL::GL)
+target_include_directories(utils PUBLIC
+	${CMAKE_CURRENT_SOURCE_DIR}/glad/include
+	${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 # Add subdirectories here
 add_subdirectory(01_triangle)
 add_subdirectory(02_simple3d)
