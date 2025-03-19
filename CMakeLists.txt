@@ -70,8 +70,11 @@ if(WIN32)
 else()
 	find_package(glfw3 3.3 REQUIRED)
 	find_package(glm REQUIRED)
-	add_compile_definitions("GLM_FORCE_SWIZZLE")
+	add_compile_definitions(GLM_FORCE_SWIZZLE GLM_ENABLE_EXPERIMENTAL)
 endif()
 
 # Add subdirectories here
 add_subdirectory(01_triangle)
+add_subdirectory(02_simple3d)
+add_subdirectory(03_textures)
+add_subdirectory(04_deffered)
