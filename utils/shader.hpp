@@ -160,13 +160,11 @@ inline auto createShaderProgram(const std::string& vertexShader, const std::stri
 	return createShaderProgram(vs, fs);
 }
 
-#ifdef GL_COMPUTE_SHADER
 inline auto createComputeShaderProgram(const std::string& computeShader) {
 	auto cs = compileShader(GL_COMPUTE_SHADER, computeShader);
 
 	return createShaderProgram(CompiledShaderStages{ &cs });
 }
-#endif
 
 inline std::vector<UniformInfo> listShaderUniforms(const OpenGLResource &aShaderProgram) {
 	std::vector<UniformInfo> uniforms;
@@ -207,3 +205,4 @@ inline std::string loadShaderSource(const fs::path& filePath) {
 
 	return fileContent;
 }
+

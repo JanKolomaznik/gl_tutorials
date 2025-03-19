@@ -14,9 +14,9 @@
 // Uncomment just one of the following headers
 // to get different variations of the demonstrations.
 
-#include "simpleTriangle.hpp"
+// #include "simpleTriangle.hpp"
 // #include "coloredTriangle.hpp"
-// #include "fractal.hpp"
+#include "fractal.hpp"
 
 int main() {
 	// Initialize GLFW
@@ -29,7 +29,7 @@ int main() {
 		auto window = Window();
 
 		auto shaderProgram = createShaderProgram(vertexShaderSource, fragmentShaderSource);
-		//GLint seedLocation = glGetUniformLocation(shaderProgram.get(), "seed");
+		GLint seedLocation = glGetUniformLocation(shaderProgram.get(), "seed");
 
 		// Set up vertex data and buffers and configure vertex attributes
 		auto geometry = createGeometry();
@@ -41,7 +41,7 @@ int main() {
 
 			GL_CHECK(glUseProgram(shaderProgram.get()));
 
-			//updateSeed(window.elapsedTime(), seedLocation);
+			updateSeed(window.elapsedTime(), seedLocation);
 
 			geometry.bindVertexArrays();
 			GL_CHECK(glDrawArrays(GL_TRIANGLES, 0, geometry.size));
