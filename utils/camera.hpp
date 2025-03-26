@@ -64,6 +64,14 @@ public:
 		}
 	}
 
+	float near() const {
+		return nearPlane;
+	}
+
+	float far() const {
+		return farPlane;
+	}
+
 private:
 	float fov;          // Field of view in radians
 	float aspectRatio;  // Aspect ratio of the viewport

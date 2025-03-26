@@ -102,6 +102,8 @@ public:
 		fallbackParameters["u_viewMat"] = view;
 		fallbackParameters["u_solidColor"] = glm::vec4(0,0,0,1);
 		fallbackParameters["u_viewPos"] = aCamera.getPosition();
+		fallbackParameters["u_near"] = aCamera.near();
+		fallbackParameters["u_far"] = aCamera.far();
 		for (const auto &data: renderData) {
 			const glm::mat4 modelMat = data.modelMat;
 			const MaterialParameters &params = data.mMaterialParams;
