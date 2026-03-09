@@ -93,3 +93,4 @@ target_include_directories(utils PUBLIC
 # Add subdirectories here
 add_subdirectory(01_triangle)
 add_subdirectory(02_simple3d)
+add_subdirectory(03_textures)
