@@ -1,0 +1,4 @@
+vertex: pn_triangles
+control: pn_triangles
+evaluation: pn_triangles
+fragment: solid_color
