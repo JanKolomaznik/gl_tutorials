@@ -1,0 +1,4 @@
+vertex: terrain
+control: terrain
+evaluation: terrain
+fragment: terrain
