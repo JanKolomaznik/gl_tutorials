@@ -1,0 +1,19 @@
+{
+  "name": "webgl-examples",
+  "version": "1.0.0",
+  "description": "A simple local server for serving static HTML files",
+  "scripts": {
+    "start": "http-server . -p 8000 --cors"
+  },
+  "keywords": [
+    "web",
+    "server",
+    "local",
+    "http-server"
+  ],
+  "author": "Jan Kolomaznik",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "14.1.1"
+  }
+}

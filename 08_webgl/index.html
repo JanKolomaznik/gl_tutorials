@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sets a clean, modern font */
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: #f4f4f4; /* Light grey background */
+        }
+        .container {
+            text-align: center; /* Center text alignment for the container */
+        }
+        a {
+            display: inline-block;
+            margin: 10px; /* Adds space between the links */
+            padding: 15px 30px; /* Padding inside the links */
+            font-size: 18px; /* Larger font size for better readability */
+            color: white; /* White text color */
+            background-color: #007BFF; /* Blue background color */
+            border: none;
+            border-radius: 5px; /* Rounded corners for the links */
+            text-decoration: none; /* Removes underline from links */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        a:hover {
+            background-color: #0056b3; /* Darker blue when hovering over the link */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="webgl/rotating_cube.html">Colored cube - WebGL 1</a>
+        <a href="webgl/textured_cube.html">Textured cube - WebGL 2</a>
+    </div>
+</body>
+</html>
