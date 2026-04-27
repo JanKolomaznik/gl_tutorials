@@ -1,0 +1,81 @@
+#version 430 core
+
+const vec3 lightColor = vec3(1.0, 1.0, 1.0);
+const float lightPower = 1.0;
+const float ambientMultiplier = 0.2;
+//uniform vec3 ambientColor = vec3(0.0, 0.0, 0.0);
+uniform vec3 diffuseColor = vec3(0.6, 0.5, 0.0);
+//const vec3 specColor = vec3(1.0, 1.0, 1.0);
+//uniform vec3 specColor = vec3(0.0, 0.0, 0.0);
+const float shininess = 100.0;
+
+layout(binding = 0) uniform sampler2D u_diffuseTexture;
+layout(binding = 1) uniform sampler2D u_specularTexture;
+layout(binding = 2) uniform sampler2D u_normalTexture;
+layout(binding = 3) uniform sampler2D u_displacementTexture;
+layout(binding = 4) uniform sampler2D u_ambientOccTexture;
+layout(binding = 6) uniform sampler2D u_shadowMap;
+//layout(binding = 6) uniform sampler2DShadow u_shadowMap;
+
+/*uniform mat4 u_modelMat;
+uniform mat4 u_viewMat;
+uniform mat4 u_projMat;
+uniform mat3 u_normalMat;
+
+uniform mat4 u_lightMat;*/
+
+const vec3 u_lightPosition = vec3(50.0, 50.0, 50.0);
+//uniform vec3 u_lightPosition = vec3(10.0, 5.0, 5.0);
+//uniform vec3 u_cameraPosition;
+uniform float u_bias = 0.0;
+
+in vec4 position;
+in vec2 texCoords;
+in vec3 normal;
+in vec4 shadowCoords;
+
+out vec4 out_color;
+out vec3 out_normal;
+out vec3 out_position;
+// out float out_shadow;
+
+vec2 poissonDisk[4] = vec2[](
+  vec2( -0.94201624, -0.39906216 ),
+  vec2( 0.94558609, -0.76890725 ),
+  vec2( -0.094184101, -0.92938870 ),
+  vec2( 0.34495938, 0.29387760 )
+);
+
+
+void main() {
+	// vec3 diffuseColor = texture(u_diffuseTexture, texCoords).rgb;
+	// vec3 specColor = texture(u_specularTexture, texCoords).rgb;
+        //
+        //
+	// vec3 sc = (shadowCoords.xyz)/shadowCoords.w * 0.5 + 0.5;
+        //
+	// if (sc.x < 0 || sc.x > 1 || sc.y < 0 || sc.y > 1) {
+	// 	out_shadow = 0.5;//texture(u_diffuseTexture, texCoords).g;
+	// 	//diffuseColor = 0.5 * diffuseColor;
+	// } else {
+	// 	out_shadow = 1.0;
+	// 	/*for (int i=0;i<4;i++){
+	// 		if ((sc.z -0.00001)> texture(u_shadowMap, sc.xy + (poissonDisk[i]/700.0)).x) {
+	// 			out_shadow -= 0.15;
+	// 		}
+	// 	}*/
+	// 	if ((sc.z - u_bias)> texture(u_shadowMap, sc.xy).x) {
+	// 		out_shadow = 0.5;
+	// 	}
+	// 	//out_shadow = 0.5 + 0.5*texture(u_shadowMap, sc, -0.001);
+	// }
+        //
+	//diffuseColor = out_shadow*diffuseColor;
+	// out_color = vec4(diffuseColor, 1.0);
+	// out_normal = normalize(normal);
+	// out_position = position.xyz/position.w;
+	out_color = vec4(0.0, 1.0, 0.0, 1.0);
+	out_normal = normalize(normal);
+	out_position = position.xyz/position.w;
+}
+
